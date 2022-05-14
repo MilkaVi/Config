@@ -16,19 +16,7 @@ spring:
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
-      routes:
-        - id: history-server
-          uri: lb://history-server
-          predicates:
-            - Path=/history/**
-          filters:
-            - RewritePath=/history/(?<path>.*), /$\{path}
-        - id: math-server
-          uri: lb://math-server
-          predicates:
-            - Path=/math/**
-          filters:
-            - RewritePath=/math/(?<path>.*), /$\{path}            
+        
 
 management:
   endpoints:
