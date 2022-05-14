@@ -16,8 +16,11 @@ spring:
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
-        
-
+    routes:
+      - id: questions
+        uri: lb://questions   
+        predicates:
+        - Path=**/questions/**
 management:
   endpoints:
     web:
