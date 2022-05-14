@@ -17,10 +17,10 @@ spring:
         enabled: true
         lowerCaseServiceId: true
     routes:
-      - id: questions
-        uri: https://example.org
-        predicates:
-        - Path=**/questions/**
+        - id: zoo_route
+          uri: lb://questions
+          predicates:
+            - Path=/questions/**
 management:
   endpoints:
     web:
